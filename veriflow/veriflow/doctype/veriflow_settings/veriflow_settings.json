@@ -1,0 +1,68 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-07-27 17:33:07.682393",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "default_severity",
+  "aging_alert_threshold_days",
+  "auto_reject_stale_exceptions",
+  "governance_contact_email"
+ ],
+ "fields": [
+  {
+   "default": "Warning",
+   "fieldname": "default_severity",
+   "fieldtype": "Select",
+   "label": "Default Severity",
+   "options": "Warning\nCritical"
+  },
+  {
+   "default": "7",
+   "description": "Number of days an exception can remain Open before it's considered at risk.",
+   "fieldname": "aging_alert_threshold_days",
+   "fieldtype": "Int",
+   "label": "Aging Alert Threshold (Days)Aging Alert Threshold (Days)"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_reject_stale_exceptions",
+   "fieldtype": "Check",
+   "label": "Auto-Reject Stale Exceptions"
+  },
+  {
+   "description": "Email address for escalations and governance alerts.",
+   "fieldname": "governance_contact_email",
+   "fieldtype": "Data",
+   "label": "Governance Contact Email"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-07-27 17:37:02.768161",
+ "modified_by": "Administrator",
+ "module": "Veriflow",
+ "name": "Veriflow Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
