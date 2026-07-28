@@ -1,0 +1,95 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:merchant_id",
+ "creation": "2026-07-25 05:02:21.379732",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "merchant_name",
+  "merchant_id",
+  "category",
+  "bonus_rate",
+  "status",
+  "source_system",
+  "last_validation_on"
+ ],
+ "fields": [
+  {
+   "fieldname": "merchant_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Merchant Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "merchant_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Merchant ID",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "Merchant Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bonus_rate",
+   "fieldtype": "Percent",
+   "label": "Bonus Rate"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nValidated\nPending Review\nRejected"
+  },
+  {
+   "fieldname": "source_system",
+   "fieldtype": "Select",
+   "label": "Source System",
+   "options": "Batch Feed A\nBatch Feed B\nManual Entry"
+  },
+  {
+   "fieldname": "last_validation_on",
+   "fieldtype": "Datetime",
+   "label": "Last Validation On",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-25 15:59:20.198154",
+ "modified_by": "Administrator",
+ "module": "Veriflow",
+ "name": "Merchant Record",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
