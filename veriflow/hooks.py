@@ -161,6 +161,12 @@ use_json_request_body = True
 # 	}
 # }
 
+doc_events = {
+    "Validation Exception": {
+        "on_update": "veriflow.veriflow.audit.log_status_change"
+    }
+}
+
 # Scheduled Tasks
 # ---------------
 
