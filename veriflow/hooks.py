@@ -199,6 +199,12 @@ fixtures = [
 # 	],
 # }
 
+scheduler_events = {
+    "hourly": [
+        "veriflow.veriflow.rule_engine.evaluate_all_records"
+    ]
+}
+
 # Testing
 # -------
 
