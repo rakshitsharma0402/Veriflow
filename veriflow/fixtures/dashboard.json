@@ -1,0 +1,31 @@
+[
+ {
+  "cards": [
+   {
+    "card": "Open Exceptions"
+   },
+   {
+    "card": "Critical Open Exceptions"
+   }
+  ],
+  "chart_options": null,
+  "charts": [
+   {
+    "chart": "Exceptions by Severity",
+    "width": "Half"
+   },
+   {
+    "chart": "Exceptions by Status",
+    "width": "Half"
+   }
+  ],
+  "dashboard_name": "Veriflow Governance Overview",
+  "docstatus": 0,
+  "doctype": "Dashboard",
+  "is_default": 0,
+  "is_standard": 0,
+  "modified": "2026-07-27 16:46:41.805927",
+  "module": "Veriflow",
+  "name": "Veriflow Governance Overview"
+ }
+]

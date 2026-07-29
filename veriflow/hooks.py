@@ -167,6 +167,17 @@ doc_events = {
     }
 }
 
+fixtures = [
+    {"dt": "Workflow", "filters": [["name", "=", "Validation Exception Review"]]},
+    {"dt": "Client Script", "filters": [["dt", "=", "Validation Exception"]]},
+    {"dt": "Custom Field", "filters": [["dt", "=", "Contact"]]},
+    {"dt": "Property Setter", "filters": [["doc_type", "=", "Contact"]]},
+    {"dt": "Role", "filters": [["name", "=", "Data Governance Reviewer"]]},
+    {"dt": "Number Card", "filters": [["module", "=", "Veriflow"]]},
+    {"dt": "Dashboard Chart", "filters": [["module", "=", "Veriflow"]]},
+    {"dt": "Dashboard", "filters": [["module", "=", "Veriflow"]]},
+]
+
 # Scheduled Tasks
 # ---------------
 

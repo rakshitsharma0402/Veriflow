@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Validation Exception",
+  "enabled": 1,
+  "modified": "2026-07-28 12:02:06.528256",
+  "module": "Veriflow",
+  "name": "Validation Exception - Summary Button",
+  "script": "frappe.ui.form.on('Validation Exception', {\n    refresh: function(frm) {\n        frm.add_custom_button('View Summary', function() {\n            frappe.call({\n                method: 'veriflow.veriflow.api.get_exception_summary',\n                callback: function(response) {\n                    let data = response.message;\n\n                    let status_rows = data.by_status.map(\n                        row => `<tr><td>${row.status}</td><td>${row.count}</td></tr>`\n                    ).join('');\n\n                    let severity_rows = data.by_severity.map(\n                        row => `<tr><td>${row.severity}</td><td>${row.count}</td></tr>`\n                    ).join('');\n\n                    let html = `\n                        <p><strong>Total Exceptions:</strong> ${data.total}</p>\n                        <h5>By Status</h5>\n                        <table class=\"table table-bordered\">\n                            <tr><th>Status</th><th>Count</th></tr>\n                            ${status_rows}\n                        </table>\n                        <h5>By Severity</h5>\n                        <table class=\"table table-bordered\">\n                            <tr><th>Severity</th><th>Count</th></tr>\n                            ${severity_rows}\n                        </table>\n                    `;\n\n                    let dialog = new frappe.ui.Dialog({\n                        title: 'Exception Summary',\n                        fields: [\n                            {\n                                fieldtype: 'HTML',\n                                fieldname: 'summary_html',\n                                options: html\n                            }\n                        ]\n                    });\n\n                    dialog.show();\n                }\n            });\n        });\n\n        frm.add_custom_button('Go to Veriflow Workspace', function() {\n            frappe.set_route('veriflow');\n        });\n    }\n});",
+  "view": "Form"
+ }
+]
