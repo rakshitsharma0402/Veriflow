@@ -1,5 +1,6 @@
 import frappe
 
+@frappe.whitelist()
 def evaluate_all_records():
     """
     Scheduled function — checks every Merchant Record against every
