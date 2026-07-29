@@ -176,6 +176,7 @@ fixtures = [
     {"dt": "Number Card", "filters": [["module", "=", "Veriflow"]]},
     {"dt": "Dashboard Chart", "filters": [["module", "=", "Veriflow"]]},
     {"dt": "Dashboard", "filters": [["module", "=", "Veriflow"]]},
+    {"dt": "Print Format", "filters": [["doc_type", "=", "Validation Exception"]]},
 ]
 
 # Scheduled Tasks
@@ -204,8 +205,8 @@ scheduler_events = {
         "veriflow.veriflow.rule_engine.evaluate_all_records"
     ],
     "daily": [
-        "veriflow.veriflow.rule_engine.escalate_aged_exceptions"
-    ]
+        "veriflow.veriflow.rule_engine.escalate_aged_exceptions"
+    ]
 }
 
 # Testing
@@ -244,7 +245,7 @@ scheduler_events = {
 
 # ignore_links_on_delete = ["Communication", "ToDo"]
 
-# Request Events
+# Request Events/var/folders/c4/0lwrmw616m5b2rxhtvc8rmn80000gq/T/TemporaryItems/NSIRD_screencaptureui_BCTfZz/Screenshot 2026-07-29 at 3.54.23 PM.png
 # ----------------
 # before_request = ["veriflow.utils.before_request"]
 # after_request = ["veriflow.utils.after_request"]
