@@ -202,7 +202,10 @@ fixtures = [
 scheduler_events = {
     "hourly": [
         "veriflow.veriflow.rule_engine.evaluate_all_records"
-    ]
+    ],
+    "daily": [
+        "veriflow.veriflow.rule_engine.escalate_aged_exceptions"
+    ]
 }
 
 # Testing
