@@ -1,22 +1,35 @@
-# Copyright (c) 2026, Rakshit Sharma and Contributors
-# See license.txt
-
-# import frappe
-from frappe.tests import IntegrationTestCase
+import frappe
+from frappe.tests.utils import FrappeTestCase
 
 
-# On IntegrationTestCase, the doctype test records and all
-# link-field test record dependencies are recursively loaded
-# Use these module variables to add/remove to/from that list
-EXTRA_TEST_RECORD_DEPENDENCIES = []  # eg. ["User"]
-IGNORE_TEST_RECORD_DEPENDENCIES = []  # eg. ["User"]
+class TestMerchantRecord(FrappeTestCase):
 
+    def setUp(self):
+        if not frappe.db.exists("Merchant Category", "Test Category"):
+            frappe.get_doc({
+                "doctype": "Merchant Category",
+                "category_name": "Test Category"
+            }).insert()
 
+    def test_naming_uses_merchant_id(self):
+        """Record's name should equal its merchant_id, per the
+        field:merchant_id naming rule."""
+        doc = frappe.get_doc({
+            "doctype": "Merchant Record",
+            "merchant_name": "Test Merchant",
+            "merchant_id": "TEST-0001",
+            "category": "Test Category",
+            "status": "Draft"
+        }).insert()
 
-class IntegrationTestMerchantRecord(IntegrationTestCase):
-	"""
-	Integration tests for MerchantRecord.
-	Use this class for testing interactions between multiple components.
-	"""
+        self.assertEqual(doc.name, "TEST-0001")
 
-	pass
+    def test_category_is_mandatory(self):
+        """Saving without a category should raise a MandatoryError."""
+        doc = frappe.get_doc({
+            "doctype": "Merchant Record",
+            "merchant_name": "No Category Merchant",
+            "merchant_id": "TEST-0002",
+            "status": "Draft"
+        })
+        self.assertRaises(frappe.MandatoryError, doc.insert)
